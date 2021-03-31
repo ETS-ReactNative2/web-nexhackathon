@@ -3,7 +3,6 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyles = createGlobalStyle`
   :root {
     --black--color: #020E17;
-
     --green--color: #07F9A2;
     --light-green--color: #76D9B9;
     --dark-green--color: #2FDF84;
@@ -14,7 +13,6 @@ export const GlobalStyles = createGlobalStyle`
 
     --red--color: #EB5757;
     --light-red--color: #FF6F6F;
-
     --foreground--color: rgba(255, 255, 255, 0.02);
 
     --linear-gradient: linear-gradient(269.95deg, #15AB89 0.03%, #2FDF84 99.96%);

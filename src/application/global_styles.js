@@ -3,7 +3,8 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyles = createGlobalStyle`
   :root {
     --black--color: #020E17;
-    --green--color: #07F9A2;
+    
+    --green--color: #2FDF84;
     --light-green--color: #76D9B9;
     --dark-green--color: #2FDF84;
 
@@ -22,6 +23,11 @@ export const GlobalStyles = createGlobalStyle`
     --card-radius: 15px;
 
     --container-max-width: 992px;
+    --container-horizontal-padding: 6vw;
+
+    --header-horizontal-padding: 6vw;
+    --header-vertical-padding: 20px;
+    --header-border-bottom: inset 0 -1px 0 0 hsla(0,0%,100%,0.1);
   }
 
   * {
@@ -49,5 +55,10 @@ export const GlobalStyles = createGlobalStyle`
   a {
     outline: none;
     text-decoration: none;
+  }
+
+  button {
+    border: none;
+    outline: none;
   }
 `

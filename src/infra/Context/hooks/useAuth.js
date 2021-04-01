@@ -22,7 +22,7 @@ export default function useAuth() {
     const { data: { token } } = await api.post('/authenticate')
 
     localStorage.setItem('token', JSON.stringify(token))
-    api.defaults.headers.Authorization = `Bearer ${JSON.parse(token)}`
+    api.defaults.headers.Authorization = `Bearer ${token}`
     setAuthenticated(true)
     history.push('/dashboard')
   }

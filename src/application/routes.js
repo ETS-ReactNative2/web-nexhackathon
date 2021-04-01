@@ -27,4 +27,4 @@ export default function Routes() {
       <CustomRoute isPrivate exact path="/dashboard" component={Dashboard} />
     </Switch>
   )
-}
+};

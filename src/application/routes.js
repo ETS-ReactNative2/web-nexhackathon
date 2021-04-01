@@ -3,11 +3,12 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 
 import { Context } from '../infra/Context/authContext'
 
+import Landing from '../presenter/screens/Landing'
 import Login from '../presenter/screens/Login'
 import Dashboard from '../presenter/screens/Dashboard'
 
 function CustomRoute({ isPrivate, ...rest}) {
-  const { authenticated, loading } = useContext(Context)
+  const { loading, authenticated } = useContext(Context)
 
   if (loading) {
     return <h1>Carregando...</h1>
@@ -23,6 +24,7 @@ function CustomRoute({ isPrivate, ...rest}) {
 export default function Routes() {
   return (
     <Switch>
+      <CustomRoute exact path="/" component={Landing} />
       <CustomRoute exact path="/login" component={Login} />
       <CustomRoute isPrivate exact path="/dashboard" component={Dashboard} />
     </Switch>

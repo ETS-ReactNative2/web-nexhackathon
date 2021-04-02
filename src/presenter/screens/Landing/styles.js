@@ -72,4 +72,10 @@ export const Container = styled.div`
   padding: 0 var(--container-horizontal-padding);
 `
 
+export const Matters = styled.div`
+  padding: 10vh 0;
+  display: flex;
+  justify-content: space-between;
+`
+
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import history from '../../../application/history';
+
+import { navigator } from '../../../application/navigator'
 
 import { 
   Wrapper,
@@ -26,11 +27,11 @@ import Spotlight from './components/Spotlight'
 import Matter from './components/Matter'
 
 function Landing() {
-  
-  function handleNavigateToLogin () {
-    history.push('/login')
-  }
 
+  function handleNavigateToLogin() {
+    navigator('login')
+  }
+ 
   return (
     <Wrapper>
       <Header>

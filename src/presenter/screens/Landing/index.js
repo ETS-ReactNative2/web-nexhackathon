@@ -24,6 +24,7 @@ import LogoImage from '../../../_assets/images/nex_logo.svg'
 import Introduction from './components/Introduction'
 import Spotlight from './components/Spotlight'
 import Matter from './components/Matter'
+import AboutSection from './components/About'
 
 function Landing() {
   
@@ -67,6 +68,7 @@ function Landing() {
           />
         </Matters>
       </Container>
+      <AboutSection />
     </Wrapper>
   );
 };

@@ -3,10 +3,8 @@ import styled from 'styled-components';
 
 export const About = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-
-  height: 105vh;
-`
-
+  align-items: flex-end;
+  margin-bottom: 100px;
 `

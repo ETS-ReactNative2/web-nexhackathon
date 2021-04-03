@@ -28,4 +28,4 @@ function AboutSection() {
   );
 };
 
-export default AboutSection
+export default AboutSection;

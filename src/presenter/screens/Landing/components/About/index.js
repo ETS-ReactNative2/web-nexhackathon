@@ -23,7 +23,10 @@ function AboutSection() {
         de trabalho com o objetivo de criar resoluções
         específicas para um ou vários desafios.
        </AboutDescription>
-       <Instructions>Siga os passos a seguir para participar da competição</Instructions>
+      <Instructions>
+        Siga os passos a seguir
+        para participar da competição
+      </Instructions>
     </About>
   );
 };

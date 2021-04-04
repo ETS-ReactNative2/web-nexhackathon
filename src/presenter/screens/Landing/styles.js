@@ -78,4 +78,21 @@ export const Matters = styled.div`
   justify-content: space-between;
 `
 
+export const RewardSection = styled.div`
+  width: 100%;
+  background: var(--white--color);
+  padding: 8vh 0 10vh 0;
+`
+
+export const FooterSection = styled.footer`
+  width: 100%;
+  padding: 6vh 0;
+`
+
+export const PartnersSection = styled.div`
+  width: 100%;
+  background: #d8d8d8;
+  padding: 6vh 0 30vh 0;
+`
+
 

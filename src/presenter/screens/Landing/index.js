@@ -15,7 +15,10 @@ import {
   LogoImg,
   
   Container,
-  Matters
+  Matters,
+  RewardSection,
+  FooterSection,
+  PartnersSection
 } from './styles';
 
 import SignInIcon from '../../../_assets/icons/log-in.svg'
@@ -26,6 +29,9 @@ import Introduction from './components/Introduction'
 import Spotlight from './components/Spotlight'
 import Matter from './components/Matter'
 import AboutSection from './components/About'
+import Rewards from './components/Rewards';
+import Footer from './components/Footer';
+import Partners from './components/Partners';
 
 function Landing() {
 
@@ -70,6 +76,19 @@ function Landing() {
         </Matters>
       </Container>
       <AboutSection />
+      <RewardSection>
+        <Container>
+          <Rewards />
+        </Container>
+      </RewardSection>
+      <PartnersSection>
+        <Partners />
+      </PartnersSection>
+      <FooterSection>
+        <Container>
+          <Footer />
+        </Container>
+      </FooterSection>
     </Wrapper>
   );
 };

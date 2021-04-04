@@ -102,7 +102,7 @@ export const CardSingle= styled.div`
     line-height: 2rem;
   }
 
-  @media(max-width: 768px){
+  @media(max-width: 980px){
     display: flex;
     flex-direction: column;
     align-items: center;

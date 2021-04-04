@@ -1,5 +1,6 @@
 import React from 'react';
-import history from '../../../application/history';
+
+import { navigator } from '../../../application/navigator'
 
 import { 
   Wrapper,
@@ -27,11 +28,11 @@ import Matter from './components/Matter'
 import AboutSection from './components/About'
 
 function Landing() {
-  
-  function handleNavigateToLogin () {
-    history.push('/login')
-  }
 
+  function handleNavigateToLogin() {
+    navigator('login')
+  }
+ 
   return (
     <Wrapper>
       <Header>

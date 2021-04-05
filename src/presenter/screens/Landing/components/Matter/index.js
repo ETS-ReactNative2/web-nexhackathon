@@ -6,7 +6,7 @@ import {
   Circle,
   MatterContent,
   ContentTitle,
-  ContentDecription
+  ContentDescription
 } from './styles';
 
 function Matter({ Title, Description }) {
@@ -16,7 +16,7 @@ function Matter({ Title, Description }) {
       <Circle />
       <MatterContent>
         <ContentTitle>{Title}</ContentTitle>
-        <ContentDecription>{Description}</ContentDecription>
+        <ContentDescription>{Description}</ContentDescription>
       </MatterContent>
     </Content>
   );

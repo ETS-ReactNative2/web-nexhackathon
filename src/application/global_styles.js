@@ -18,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
 
     --linear-gradient: linear-gradient(269.95deg, #15AB89 0.03%, #2FDF84 99.96%);
 
-    --button-radius: 10px;
+    --button-radius: 5px;
     --input-radius: 10px;
     --card-radius: 15px;
 

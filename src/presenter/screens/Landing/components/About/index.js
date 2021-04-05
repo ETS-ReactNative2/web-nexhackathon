@@ -6,8 +6,8 @@ import {
   Main,
   Title,
   Instructions,
+  CardsContainer,
   Cards,
-  CardSingle,
   Icon,
   Action,
 } from "./styles";
@@ -34,8 +34,8 @@ function AboutSection() {
         </Title>
         <Instructions>
           <h3>Siga os passos a seguir para participar da competição</h3>
-          <Cards>
-            <CardSingle>
+          <CardsContainer>
+            <Cards>
               <Icon src={EditImg} />
               <span>
                 O primeiro passo para participar do nosso hackathon é você se
@@ -43,8 +43,8 @@ function AboutSection() {
                 você é uma pessoa real, além de poder receber os prêmios e
                 benefícios.
               </span>
-            </CardSingle>
-            <CardSingle>
+            </Cards>
+            <Cards>
               <Icon src={GroupImg} />
               <span>
                 Em seguida você deverá formar uma equipe de até 5 pessoas com os
@@ -52,8 +52,8 @@ function AboutSection() {
                 membros da equipe são Business, Marketing, UI/UX e
                 Desenvolvedores.
               </span>
-            </CardSingle>
-            <CardSingle>
+            </Cards>
+            <Cards>
               <Icon src={NetworkImg} />
               <span>
                 Assim que feito seu cadastro você terá acesso a um servidor onde
@@ -61,8 +61,8 @@ function AboutSection() {
                 o network com essas pessoas, não tenha medo de se apresentar,
                 esta etapa é muito importante!
               </span>
-            </CardSingle>
-            <CardSingle>
+            </Cards>
+            <Cards>
               <Icon src={RouteImg} />
               <span>
                 Com a sua equipe você ja poderá desenvolver uma solução para o
@@ -70,8 +70,8 @@ function AboutSection() {
                 avaliação. Assim você irá concluir um hackathon e concorrer as
                 premiações.
               </span>
-            </CardSingle>
-          </Cards>
+            </Cards>
+          </CardsContainer>
         </Instructions>
         <Action>
           <button>Inscreva-Se</button>

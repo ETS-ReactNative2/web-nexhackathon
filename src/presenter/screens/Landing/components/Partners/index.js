@@ -3,10 +3,9 @@ import React from 'react'
 import {
   Content,
   Partner,
-  Realization,
-  Nex,
-  Partner2,
-  Shawee
+  Support,
+  Title,
+  LogoImage,
 } from './styles'
 
 import NexLogo from '../../../../../_assets/icons/nex-logo.svg'
@@ -16,13 +15,13 @@ function Partners(){
   return(
     <Content>
       <Partner>
-        <Realization>Realização:</Realization>
-        <Nex src={NexLogo} />
+        <Title>Realização:</Title>
+        <LogoImage src={NexLogo} />
       </Partner>
-      <Partner2>
-        <Realization>Apoio:</Realization>
-        <Shawee src={ShaweeLogo} />
-      </Partner2>
+      <Support>
+        <Title>Apoio:</Title>
+        <LogoImage src={ShaweeLogo} />
+      </Support>
     </Content>
   )
 }

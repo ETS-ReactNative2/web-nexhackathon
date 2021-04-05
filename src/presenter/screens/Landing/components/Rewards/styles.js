@@ -8,12 +8,12 @@ export const Content = styled.div`
 `
 
 export const Title = styled.h3`
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  color: #15AB89;
+  color: var(--dark-green--color);
 `
 
-export const Reward = styled.div`
+export const RewardsConstainer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
@@ -26,40 +26,23 @@ export const Reward = styled.div`
   }
 `
 
-export const RewardSingle = styled.div`
+export const Reward = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-    &:first-child {
-      margin-top: 9rem;
-    }
-
-    &:last-child {
-      margin-top: 9rem;
-    }
-
-    @media(max-width: 980px){
-      margin-bottom: 3rem;
-      &:first-child {
-      margin-top: 1rem;
-    }
-
-    &:last-child {
-      margin-top: 0;
-    }
-  }
 `
 
 export const RewardIcon = styled.img`
+  width: 10rem;
 `
 
 export const RewardInfo = styled.h3`
   max-width: 300px;
   text-align: center;
   font-weight: normal;
-  font-size: 1.7rem;
-  color: #15AB89;
+  font-size: 1.2rem;
+  color: var(--light-green--color);
 
   @media(max-width: 980px){
     max-width: none;

@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { navigator } from '../../../application/navigator'
 
 import { 
   Wrapper,
 
-  Header,
+  HeaderContent,
+  LogoImg,
   HeaderButtons,
   SignUp,
   SignUpText,
   SignIn,
   SignInText,
   SignInImg,
-  LogoImg,
+
+  Actions,
   
   Container,
   Matters,
@@ -34,25 +36,35 @@ import Footer from './components/Footer';
 import Partners from './components/Partners';
 
 function Landing() {
-
   function handleNavigateToLogin() {
     navigator('login')
   }
  
   return (
     <Wrapper>
-      <Header>
-          <LogoImg src={LogoImage} />
-          <HeaderButtons>
-            <SignUp>
-              <SignUpText>Participar</SignUpText>
-            </SignUp>
-            <SignIn onClick={handleNavigateToLogin}>
-              <SignInText>Entrar</SignInText>
-              <SignInImg src={SignInIcon} />
-            </SignIn>
-          </HeaderButtons>
-      </Header>
+      <HeaderContent>
+        <LogoImg src={LogoImage} />
+        <HeaderButtons>
+          <SignUp>
+            <SignUpText>Participar</SignUpText>
+          </SignUp>
+          <SignIn onClick={handleNavigateToLogin}>
+            <SignInText>Entrar</SignInText>
+            <SignInImg src={SignInIcon} />
+          </SignIn>
+        </HeaderButtons>
+      </HeaderContent>
+
+      <Actions >
+        <SignUp>
+          <SignUpText>Participar</SignUpText>
+        </SignUp>
+        <SignIn onClick={handleNavigateToLogin}>
+          <SignInText>Entrar</SignInText>
+          <SignInImg src={SignInIcon} />
+        </SignIn>
+      </Actions>
+
       <Container>
         <Introduction />
       </Container>

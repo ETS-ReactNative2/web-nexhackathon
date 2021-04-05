@@ -9,11 +9,12 @@ export const Content = styled.div`
 
 export const Wave = styled.img`
   width: 100%;
+  margin-bottom: -1px;
 `
 export const Main = styled.main`
   width: 100%;
-  padding: 2vh 0 10vh 0;
   background: var(--linear-gradient);
+  padding: 5vh var(--container-horizontal-padding);
 `
 
 export const Title = styled.header`
@@ -24,8 +25,9 @@ export const Title = styled.header`
   
   h1{
     font-weight: bold;
-    font-size: 2.2rem;
+    font-size: 2rem;
     text-transform: uppercase;
+    text-align: center;
   }
 
   p{
@@ -33,13 +35,13 @@ export const Title = styled.header`
     margin-top: 3rem;
     max-width: 1000px;
     font-weight: normal;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     color: var(--white--color);
   }
 
   @media(max-width: 768px){
     p{
-      font-size: 1.2rem;
+      font-size: 1rem;
       margin-top: 1.5rem;
     }
   }
@@ -55,18 +57,18 @@ export const Instructions = styled.div`
 
   h3{
     font-weight: normal;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 
   @media(max-width: 768px){
     h3{
-      font-size: 1.3rem;
+      font-size: 1rem;
       text-align: center;
     }
   }
 `
 
-export const Cards = styled.div`
+export const CardsContainer = styled.div`
   margin-top: 4rem;
   display: grid;
   max-width: 1380px;
@@ -88,7 +90,7 @@ export const Cards = styled.div`
 
 `
 
-export const CardSingle= styled.div`
+export const Cards = styled.div`
   width: 100%;
   text-align: justify;
   margin-bottom: 3rem;
@@ -98,8 +100,8 @@ export const CardSingle= styled.div`
   span{
     margin-left: 1rem;
     color: var(--white--color);
-    font-size: 1.2rem;
-    line-height: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.4rem;
   }
 
   @media(max-width: 980px){
@@ -109,7 +111,6 @@ export const CardSingle= styled.div`
 
     span{
       margin-top: 1rem;
-      font-size: 1.1rem;
     }
   }
 `
@@ -122,12 +123,12 @@ export const Icon = styled.img`
 export const Action = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 2vh;
 
   button{
     padding: 0.7rem 1.5rem;
     text-transform: uppercase;
-    font-size: 1.7rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #15AB89;
     background: var(--white--color);

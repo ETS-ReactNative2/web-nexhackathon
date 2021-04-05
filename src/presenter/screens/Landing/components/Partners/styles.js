@@ -14,27 +14,22 @@ export const Partner = styled.div`
   flex-direction: column;
 `
 
-export const Realization = styled.h3`
+export const Title = styled.h3`
   font-weight: normal;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #9F9F9F;
   text-transform: uppercase;
 `
 
-export const Nex = styled.img`
-  width: 100px;
-  margin-top: 3rem;
+export const LogoImage = styled.img`
+  width: 60%;
+  margin-top: 2vh
 `
 
-export const Partner2 = styled.div`
+export const Support = styled.div`
+  margin-top: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 6rem;
-`
-
-export const Shawee = styled.img`
-  width: 200px;
-  margin-top: 3rem;
 `

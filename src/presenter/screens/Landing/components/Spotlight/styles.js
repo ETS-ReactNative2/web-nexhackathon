@@ -5,10 +5,8 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-
 export const Banner = styled.div`
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -37,10 +35,14 @@ export const Button = styled.button`
   &:hover{
     filter: opacity(60%);
   }
+
+  @media (max-width: 500px) {
+    width: 2.5rem;
+  }
 `
 
 export const ButtonIcon = styled.img`
-
+  width: 100%;
 `
 
 export const Wave = styled.img`

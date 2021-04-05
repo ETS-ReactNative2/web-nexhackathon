@@ -43,23 +43,23 @@ function AboutSection() {
               </CardSingle>
               <CardSingle>
                 <Icon src={GroupImg} />
-                <span>O primeiro passo para participar do nosso hackathon é você se registrar, 
-                  assim podemos ter acesso aos seus dados e saber se você é uma pessoa real, 
-                  além de poder  receber os prêmios e benefícios.
+                <span>Em seguida você deverá formar uma equipe de até 5 pessoas com os 
+                  participantes deste evento, lembre-se, as funções para os membros da equipe
+                  são Business, Marketing, UI/UX e Desenvolvedores.
                 </span>
               </CardSingle>
               <CardSingle>
                 <Icon src={NetworkImg} />
-                <span>O primeiro passo para participar do nosso hackathon é você se registrar, 
-                  assim podemos ter acesso aos seus dados e saber se você é uma pessoa real, 
-                  além de poder  receber os prêmios e benefícios.
+                <span>Assim que feito seu cadastro você terá acesso a um servidor onde haverão 
+                  vários outros participantes e a proposta é que você faça o network com essas 
+                  pessoas, não tenha medo de se apresentar, esta etapa é muito importante!
                 </span>
               </CardSingle>
               <CardSingle>
                 <Icon src={RouteImg} />
-                <span>O primeiro passo para participar do nosso hackathon é você se registrar, 
-                  assim podemos ter acesso aos seus dados e saber se você é uma pessoa real, 
-                  além de poder  receber os prêmios e benefícios.
+                <span>Com a sua equipe você ja poderá desenvolver uma solução para o problema 
+                  proposto e entregá-la até a data definida para a avaliação. Assim você irá 
+                  concluir um hackathon e concorrer as premiações.
                 </span>
               </CardSingle>
             </Cards>

@@ -6,6 +6,7 @@ import { Context } from '../infra/Context/authContext'
 import Landing from '../presenter/screens/Landing'
 import Login from '../presenter/screens/Login'
 import Home from '../presenter/screens/Home'
+import NotFound from '../presenter/screens/NotFoundRoute'
 
 function CustomRoute({ isPrivate, ...rest}) {
   const { loading, authenticated } = useContext(Context)
@@ -26,7 +27,11 @@ export default function Routes() {
     <Switch>
       <CustomRoute exact path="/" component={Landing} />
       <CustomRoute exact path="/login" component={Login} />
-      <CustomRoute exact path="/home" component={Home} />
+      <CustomRoute isPrivate exact path="/home" component={Home} />
+
+      {/* prevent not found route */}
+      <CustomRoute path="/404" component={NotFound} />
+      <Redirect to="/404" />
     </Switch>
   )
 };

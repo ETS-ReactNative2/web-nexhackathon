@@ -7,7 +7,7 @@ export const MissionCard = styled.div`
   min-width: 16rem;
   padding: 12vh 1vw;
   border-radius: 10px;
-  background: var(--foreground--color);
+  background: #07131C;
   border: 1px solid var(--white--color);
   
   display: flex;
@@ -17,6 +17,10 @@ export const MissionCard = styled.div`
   
   @media (max-width: 900px) {
     margin-right: 20px;
+  }
+
+  @media (max-width: 380px) {
+    padding: 10vh 1vw;
   }
 `
 
@@ -44,12 +48,12 @@ export const Checked = styled.img`
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 2px solid var(--black--color);
+  border: 2px solid #07131C;
   bottom: -5px;
   right: -5px;
   position: absolute;
 
-  background: var(--black--color);
+  background: #07131C;
 `
 
 export const MissionTitle = styled.h3`

@@ -26,6 +26,7 @@ import {
   Link
 } from './styles';
 import { navigator } from '../../../application/navigator';
+import history from '../../../application/history';
 
 function Login() {
 
@@ -41,7 +42,7 @@ function Login() {
       password: Yup.string().min(6, 'Senha inválida').required('Por favor insira uma senha.')
     }),
     onSubmit: values => {
-      alert(JSON.stringify(values))
+      handleLogin(values)
     }
   })
 
@@ -49,10 +50,14 @@ function Login() {
     navigator('sign-up')
   }
 
+  function handleNavigateBack() {
+    history.goBack()
+  }
+
   return (
     <Container>
       <Header>
-          <Redirect>
+          <Redirect onClick={handleNavigateBack}>
               <Icon src={LeftArrow} />
           </Redirect>
           <HeaderText>É bom te ver por aqui!</HeaderText>

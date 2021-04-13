@@ -12,12 +12,12 @@ import {
 // Icons import
 import SuccessIcon from '../../../../../_assets/icons/success.svg'
 
-function Mission({ MissionIcon, Title, Description }) {
+function Mission({ MissionIcon, Title, Description, isCheck }) {
   return (
     <MissionCard>
       <IconWrapper>
         <Icon src={MissionIcon} />
-        <Checked src={SuccessIcon} />
+        {isCheck ? <Checked src={SuccessIcon} /> : ""}
       </IconWrapper>
 
       <MissionTitle>{Title}</MissionTitle>

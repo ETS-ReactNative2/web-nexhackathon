@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-import api from '../../services/api'
+import api from '../../services/http'
 import history from '../../../application/history'
 
 export default function useAuth() {
@@ -18,8 +18,8 @@ export default function useAuth() {
     setLoading(false)
   }, [])
   
-  async function handleLogin() {
-    const { data: { token } } = await api.post('/session')
+  async function handleLogin(values) {
+    const { data: { token } } = await api.post('/session', values)
 
     localStorage.setItem('token', JSON.stringify(token))
     api.defaults.headers.Authorization = `Bearer ${token}`

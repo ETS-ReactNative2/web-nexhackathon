@@ -16,6 +16,18 @@ export const Text = styled.p`
 
   display: flex;
   align-items: center;
+
+  @media(max-width: 460px){
+    font-size: .8rem;
+  }
+
+  @media(max-width: 320px){
+    font-size: .7rem;
+  }
+
+  @media(max-width: 290px){
+    font-size: .6rem;
+  }
 `
 
 export const GreenText = styled.span`
@@ -26,4 +38,12 @@ export const GreenText = styled.span`
 export const Icon = styled.img`
   width: 1rem;
   margin-left: 5px;
+
+  @media(max-width: 460px){
+    width: .8rem;
+  }
+
+  @media(max-width: 320px){
+    width: .7rem;
+  }
 `

@@ -8,11 +8,13 @@ import Login from '../presenter/screens/Login'
 import Home from '../presenter/screens/Home'
 import NotFound from '../presenter/screens/NotFoundRoute'
 
+import Loader from '../presenter/screens/Loader'
+
 function CustomRoute({ isPrivate, ...rest}) {
   const { loading, authenticated } = useContext(Context)
 
   if (loading) {
-    return <h1>Carregando...</h1>
+    return <Loader />
   }
 
   if (isPrivate && !authenticated) {

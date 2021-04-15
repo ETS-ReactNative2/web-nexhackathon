@@ -6,6 +6,7 @@ import { Context } from '../infra/Context/authContext'
 import Landing from '../presenter/screens/Landing'
 import Login from '../presenter/screens/Login'
 import Home from '../presenter/screens/Home'
+import SubmitProject from '../presenter/screens/Teams/Submit'
 import NotFound from '../presenter/screens/NotFoundRoute'
 
 import Loader from '../presenter/screens/Loader'
@@ -29,6 +30,8 @@ export default function Routes() {
     <Switch>
       <CustomRoute exact path="/" component={Landing} />
       <CustomRoute exact path="/login" component={Login} />
+      <CustomRoute exact path="/home" component={Home} />
+      <CustomRoute exact path="/submitProject" component={SubmitProject} />
       <CustomRoute isPrivate exact path="/home" component={Home} />
 
       {/* prevent not found route */}

@@ -7,6 +7,7 @@ import Landing from '../presenter/screens/Landing'
 import Login from '../presenter/screens/Login'
 import Home from '../presenter/screens/Home'
 import NotFound from '../presenter/screens/NotFoundRoute'
+import CreateTeams from '../presenter/screens/Teams/CreateTeams'
 
 function CustomRoute({ isPrivate, ...rest}) {
   const { loading, authenticated } = useContext(Context)
@@ -28,6 +29,7 @@ export default function Routes() {
       <CustomRoute exact path="/" component={Landing} />
       <CustomRoute exact path="/login" component={Login} />
       <CustomRoute isPrivate exact path="/home" component={Home} />
+      <CustomRoute exact path="/createTeams" component={CreateTeams} />
 
       {/* prevent not found route */}
       <CustomRoute path="/404" component={NotFound} />

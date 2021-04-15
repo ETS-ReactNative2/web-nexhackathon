@@ -15,7 +15,10 @@ export default function useAuth() {
       setAuthenticated(true)
     }
 
-    setLoading(false)
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 1000);
+    return () => clearTimeout(timer);
   }, [])
   
   async function handleLogin(values) {

@@ -5,11 +5,12 @@ export const Content = styled.section`
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding: 0 0 5rem 0;
 `
 
 export const Container = styled.div`
   max-width: 1300px;
-  padding: 5vh var(--container-horizontal-padding);
+  padding: 4vh var(--container-horizontal-padding);
 `
 
 export const Header = styled.header`
@@ -76,7 +77,7 @@ export const InputTextArea = styled.textarea`
 
 export const Picture = styled.div`
   width: 100%;
-  margin-top: 2.5rem;
+  margin-top: 3rem;
   display: flex;
 
   @media(max-width: 800px){
@@ -109,7 +110,7 @@ export const AddPicture = styled.img`
 export const Alert = styled.p`
   color: var(--light-red--color);
   font-size: 1.1rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   width: 100%;
   display: flex;
   justify-content: left;
@@ -117,7 +118,7 @@ export const Alert = styled.p`
 
 export const SubmitTeam = styled.button`
   width: 100%;
-  margin-top: 4rem;
+  margin-top: 3rem;
   padding: 0.8rem 1rem;
   border-radius: 0.5rem;
   font-size: 1.4rem;

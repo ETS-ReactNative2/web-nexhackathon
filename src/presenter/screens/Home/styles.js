@@ -1,4 +1,11 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const bounce = keyframes`{
+  50% {
+    transform: translateY(-50%);
+  }
+}
+`
 
 export const Wrapper = styled.div`
   display: flex;
@@ -14,77 +21,7 @@ export const Container = styled.div`
   flex-direction: column;
 `
 
-// 
-//  User Content Styles
-// 
 
-export const ProfileContent = styled.div`
-  width: 100%;
-
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-`
-
-export const ProfileImage = styled.div`
-  width: 70px;
-  height: 70px;
-  position: relative;
-`
-
-export const UserImage = styled.img`
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-
-  background-position: center;
-  background-size: cover;
-`
-
-export const Dot = styled.span`
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  border: 2px solid var(--black--color);
-  bottom: 1px;
-  right: 1px;
-  position: absolute;
-
-  background: var(--green--color);
-`
-
-export const ProfileText = styled.div`
-  margin-left: 20px;
-`
-
-export const Text = styled.h3`
-  font-size: 1.2rem;
-  line-height: 1.6rem;
-  font-weight: 600;
-`
-
-// 
-//  Level Bar Styles
-// 
-
-export const LevelBar = styled.div`
-  margin-top: 5vh;
-  width: 100%;
-  height: 4px;
-
-  background: var(--foreground--color);
-  display: flex;
-  position: relative;
-`
-
-export const LevelBarIndicator = styled.span`
-  width: 25%;
-  height: 4px;
-  background: var(--green--color);
-
-  position: absolute;
-  transition: .7s ease;
-`
 
 // 
 //  Missions Card Styles
@@ -148,12 +85,37 @@ export const MissionsMain = styled.div`
   scroll-snap-type: x mandatory;
 
 
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     overflow-x: auto;
   }
 `
 
+export const ScrollDownIndcator = styled.div`
+  position: relative;
+  width: 100%;
 
+  &:before {
+  animation: ${bounce} 1s ease infinite;
+  bottom: 1rem;
+  color: #fff;
+  content: '╲╱';
+  font-size: 1.5rem;
+  height: 1.5rem;
+  left: 50%;
+  letter-spacing: -1px;
+  line-height: 4rem;
+  margin-left: -3rem;
+  opacity: 0.8;
+  position: absolute;
+  text-align: center;
+  width: 6rem;
+
+  @media (max-width: 500px) {
+    display: none;
+    overflow: hidden;
+  }
+}
+`
 
 export const ShortcutsContent = styled.div`
   margin-top: 30px;
@@ -179,7 +141,7 @@ export const ShortcutMain = styled.div`
   justify-content: space-between;
   scroll-snap-type: y mandatory;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     overflow-x: auto;
   }
 `
@@ -224,10 +186,15 @@ export const NavgationBarContent = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  background: var(--foreground--color);
+  background: #07131C;
 
   position: fixed;
   bottom: 0;
+
+  @media (min-width: 500px) {
+    display: none;
+    overflow: hidden;
+  }
 `
 
 export const NavigationBarItem = styled.button`

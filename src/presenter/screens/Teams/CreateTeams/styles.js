@@ -80,10 +80,7 @@ export const Picture = styled.div`
   display: flex;
 
   @media(max-width: 800px){
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 1rem
+    overflow-x: auto;
   }
 `
 
@@ -93,6 +90,8 @@ export const PictureSingle = styled.div`
   margin-right: 1rem;
   background: var(--foreground--color);
   display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 export const AddPicture = styled.img`
@@ -101,9 +100,10 @@ export const AddPicture = styled.img`
   align-items: center;
   justify-content: center;
   border-radius: 0.5rem;
-  font-size: 0.5rem;
-  margin: auto;
-  text-align: center;
+
+  @media(max-width: 800px){
+    width: 150px;
+  }
 `
 
 export const Alert = styled.p`

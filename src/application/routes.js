@@ -29,7 +29,7 @@ export default function Routes() {
       <CustomRoute exact path="/" component={Landing} />
       <CustomRoute exact path="/login" component={Login} />
       <CustomRoute isPrivate exact path="/home" component={Home} />
-      <CustomRoute exact path="/createTeams" component={CreateTeams} />
+      <CustomRoute isPrivate exact path="/create-teams" component={CreateTeams} />
 
       {/* prevent not found route */}
       <CustomRoute path="/404" component={NotFound} />

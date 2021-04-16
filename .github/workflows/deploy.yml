@@ -42,4 +42,4 @@ jobs:
           script: |
             cd ~/web-nexhackaton
             yarn
-            pm2 restart hackanex_app
+            pm2 restart frontend_app

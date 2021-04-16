@@ -6,6 +6,7 @@ import { Context } from '../infra/Context/authContext'
 import Landing from '../presenter/screens/Landing'
 import Login from '../presenter/screens/Login'
 import Home from '../presenter/screens/Home'
+import Teams from '../presenter/screens/Teams'
 import SubmitProject from '../presenter/screens/Teams/Submit'
 import NotFound from '../presenter/screens/NotFoundRoute'
 import CreateTeams from '../presenter/screens/Teams/CreateTeams'
@@ -32,8 +33,9 @@ export default function Routes() {
       <CustomRoute exact path="/" component={Landing} />
       <CustomRoute exact path="/login" component={Login} />
       <CustomRoute exact path="/home" component={Home} />
-      <CustomRoute exact path="/submitProject" component={SubmitProject} />
+      <CustomRoute isPrivate exact path="/submit-project" component={SubmitProject} />
       <CustomRoute isPrivate exact path="/home" component={Home} />
+      <CustomRoute isPrivate exact path="/teams" component={Teams} />
       <CustomRoute isPrivate exact path="/create-teams" component={CreateTeams} />
 
       {/* prevent not found route */}

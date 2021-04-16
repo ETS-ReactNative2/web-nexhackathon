@@ -22,7 +22,7 @@ export default function useAuth() {
   }, [])
   
   async function handleLogin(values) {
-    const { data: { token } } = await api.post('/session', values)
+    const { data: { token } } = await api.post('/sessions', values)
 
     localStorage.setItem('token', JSON.stringify(token))
     api.defaults.headers.Authorization = `Bearer ${token}`

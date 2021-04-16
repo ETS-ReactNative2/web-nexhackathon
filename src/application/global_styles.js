@@ -24,6 +24,8 @@ export const GlobalStyles = createGlobalStyle`
     --card-radius: 15px;
 
     --container-max-width: 992px;
+    --container-margin-top: 65px;
+    --container-vertical-padding: 5vh;
     --container-horizontal-padding: 6vw;
 
     --header-horizontal-padding: 6vw;

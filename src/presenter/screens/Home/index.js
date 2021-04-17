@@ -30,6 +30,7 @@ import {
   NavigationBarTitle,
 } from './styles';
 
+import Loader from '../Loader'
 import Header from '../../../components/Header'
 import ProfileContent from './components/ProfileContent'
 import ProfileLevelBar from './components/LevelBar'
@@ -52,29 +53,35 @@ function Home() {
 
   useEffect(() => {
     api.get('/users/profile').then(response => {
-      const data = response.data
+      if (response && response.data) {
+        const data = response.data
 
-      const percentValue = () => {
-        var initvalue = 0
-        {data.profile_image ? initvalue+=25 : 0}
-        {data.headline ? initvalue+=25 : 0}
-        {data.description ? initvalue+=25 : 0}
-        {data.skillLevel >= 1 ? initvalue+=25 : 0}
+        const percentValue = () => {
+          var initvalue = 0
+          {data.profile_image ? initvalue+=25 : 0}
+          {data.headline ? initvalue+=25 : 0}
+          {data.description ? initvalue+=25 : 0}
+          {data.skillLevel >= 1 ? initvalue+=25 : 0}
 
-        return initvalue
+          return initvalue
+        }
+
+        setUser({
+          ...data,
+          skillLevel: data.skills.length,
+          surname: data.name.split(' ')[0],
+          profileLevel: percentValue(data)
+        })
       }
-
-      setUser({
-        ...data,
-        skillLevel: data.skills.length,
-        surname: data.name.split(' ')[0],
-        profileLevel: percentValue(data)
-      })
     })
   }, [])
 
   function handleNavigateToTeams() {
     navigator('teams')
+  }
+
+  if (!user) {
+    return <Loader />
   }
 
   return (

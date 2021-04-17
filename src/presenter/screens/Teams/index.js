@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
+
 import api from '../../../infra/services/http'
+import { navigator } from '../../../application/navigator'
 
 import {
   Wrapper,
@@ -23,6 +25,10 @@ function Teams() {
     })
   }, [])
 
+  function handleNavigateToCreate() {
+    navigator('team/create')
+  }
+
   return (
     <Wrapper>
       <Header>
@@ -31,7 +37,7 @@ function Teams() {
 
       <Container>
         <Title>Veja também outros times!</Title>
-        <Button>Criar time</Button>
+        <Button onClick={handleNavigateToCreate} >Criar time</Button>
         <TeamsWrapper>
         {teams.map((team, index) => (
           <TeamCard 

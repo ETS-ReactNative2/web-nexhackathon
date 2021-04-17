@@ -19,8 +19,8 @@ import {
   AddPicture
 } from './styles'
 
-import arrowLeft from '../../../../_assets/icons/left-arrow.svg'
-import addPicture from '../../../../_assets/icons/add-img.svg'
+import arrowLeft from '../../../_assets/icons/left-arrow.svg'
+import addPicture from '../../../_assets/icons/add-img.svg'
 
 function CreateTeams(){
   return(

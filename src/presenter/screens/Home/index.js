@@ -1,4 +1,9 @@
-import React from 'react'
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-lone-blocks */
+import React, { useEffect, useState } from 'react'
+
+import api from '../../../infra/services/http'
+import { navigator } from '../../../application/navigator'
 
 import {
   Wrapper,
@@ -41,30 +46,36 @@ import TicketIcon from '../../../_assets/icons/ticket.svg'
 import UserIcon from '../../../_assets/icons/user.svg'
 import UsersIcon from '../../../_assets/icons/users.svg'
 
-// Functions
-import CalculateProfileLevel from '../../../application/calculateUserProfileLevel'
-
-const user = {
-  "name": "Pedro Augusto Ribeiro Marques",
-  "school": "",
-  "date_of_birth": "",
-  "email": "",
-  "profile_image": "teste",
-  "headline": "",
-  "description": "",
-  "points": "",
-  "linkedin": "",
-  "github": "",
-  "instagram": "",
-  "skills": [
-    {
-      "id": "teste"
-    }
-  ],
-  "profile_image_url": "https://instagram.fgru5-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/135230667_715566819095454_5830822290069434671_n.jpg?tp=1&_nc_ht=instagram.fgru5-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=YhAAuybDGYcAX_d9w-H&edm=AP_V10EAAAAA&ccb=7-4&oh=30131dc00a7c01091fe9ed70c7263d80&oe=6091249A&_nc_sid=4f375e",
-}
-
 function Home() {
+
+  const [user, setUser] = useState({})
+
+  useEffect(() => {
+    api.get('/users/profile').then(response => {
+      const data = response.data
+
+      const percentValue = () => {
+        var initvalue = 0
+        {data.profile_image ? initvalue+=25 : 0}
+        {data.headline ? initvalue+=25 : 0}
+        {data.description ? initvalue+=25 : 0}
+        {data.skillLevel >= 1 ? initvalue+=25 : 0}
+
+        return initvalue
+      }
+
+      setUser({
+        ...data,
+        skillLevel: data.skills.length,
+        surname: data.name.split(' ')[0],
+        profileLevel: percentValue(data)
+      })
+    })
+  }, [])
+
+  function handleNavigateToTeams() {
+    navigator('teams')
+  }
 
   return (
     <Wrapper>
@@ -74,18 +85,18 @@ function Home() {
 
       <Container>
         <ProfileContent
-          name={user.name}
+          name={user.surname}
           profile_image={user.profile_image_url}
         />
 
         <ProfileLevelBar
-          user={user}
+          value={user.profileLevel}
         />
 
         <MissionsContent>
           <MissionsHeader>
-            <MissionsText>{CalculateProfileLevel(user) >= 100 ? "Parabéns. Você já é um" : "Evolua o seu perfil para tornar-se"} <Bold style={{ marginLeft: '5px' }} >all-star!</Bold></MissionsText>
-            <MissionsText><Bold>Perfil:</Bold>{CalculateProfileLevel(user) >= 100 ? "All Star" : "Iniciante"}</MissionsText>
+            <MissionsText>{user.profileLevel >= 100 ? "Parabéns. Você já é um" : "Evolua o seu perfil para tornar-se"} <Bold style={{ marginLeft: '5px' }} >all-star!</Bold></MissionsText>
+            <MissionsText><Bold>Perfil:</Bold>{user.profileLevel >= 100 ? "All Star" : "Iniciante"}</MissionsText>
           </MissionsHeader>
 
           <MissionsMain>
@@ -114,7 +125,7 @@ function Home() {
               MissionIcon={TargetIcon}
               Title="Adicionar habilidades"
               Description="Adicione suas habilidades para despertar interesse em algum time."
-              isCheck={user.skills.length >= 1 ? true : false}
+              isCheck={user.skillLevel >= 1 ? true : false}
             />
           </MissionsMain>
         </MissionsContent>
@@ -167,7 +178,7 @@ function Home() {
           <NavigationBarTitle>Perfil</NavigationBarTitle>
         </NavigationBarItem>
 
-        <NavigationBarItem>
+        <NavigationBarItem onClick={handleNavigateToTeams}>
           <NavigationBarIcon src={UsersIcon} />
           <NavigationBarTitle>Times</NavigationBarTitle>
         </NavigationBarItem>

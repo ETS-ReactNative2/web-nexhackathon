@@ -19,8 +19,8 @@ import {
   Submit
 } from './styles'
 
-import arrowImg from '../../../../_assets/icons/left-arrow.svg'
-import youtubeImg from '../../../../_assets/icons/youtube.svg' 
+import arrowImg from '../../../_assets/icons/left-arrow.svg'
+import youtubeImg from '../../../_assets/icons/youtube.svg' 
 
 function SubmitProject(){
   return(

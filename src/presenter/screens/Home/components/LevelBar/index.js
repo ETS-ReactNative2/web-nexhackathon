@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import {
   LevelBar,
   LevelBarIndicator,
 } from './styles';
 
-import CalculateProfileLevel from '../../../../../application/calculateUserProfileLevel'
+function ProfileLevelBar({value}) {
+  const [percentValue, setPercentValue] = useState(0)
 
-function ProfileLevelBar({user}) {
+  useEffect(() => {
+    if (value) {
+      setPercentValue(value)
+    }
+  }, [value])
+
   return (
     <LevelBar>
-      <LevelBarIndicator style={{ width: `${CalculateProfileLevel(user)}%` }} />
+      <LevelBarIndicator style={{ width: `${percentValue}%` }} />
     </LevelBar>
   );
 };

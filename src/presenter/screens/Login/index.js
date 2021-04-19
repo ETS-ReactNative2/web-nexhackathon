@@ -46,7 +46,7 @@ function Login() {
   })
 
   function handleNavigateToRegister() {
-    navigator('sign-up')
+    navigator('signup')
   }
 
   return (

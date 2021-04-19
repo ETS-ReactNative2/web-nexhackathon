@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 import api from '../../services/http'
 import history from '../../../application/history'
@@ -7,11 +7,23 @@ export default function useAuth() {
   const [authenticated, setAuthenticated] = useState(false)
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    const token = localStorage.getItem('token')
+  const [data, setData] = useState(() => {
+    const token = localStorage.getItem('token');
+    const user = localStorage.getItem('user');
 
-    if (token) {
-      api.defaults.headers.Authorization = `Bearer ${JSON.parse(token)}`
+    if (token && user) {
+      api.defaults.headers.authorization = `Bearer ${token}`;
+
+      return { token, user: JSON.parse(user) };
+    }
+
+    return {}
+  })
+
+  useEffect(() => {
+    const { token, user } = data
+
+    if (token && user) {
       setAuthenticated(true)
     }
 
@@ -19,23 +31,32 @@ export default function useAuth() {
       setLoading(false)
     }, 1000);
     return () => clearTimeout(timer);
-  }, [])
+  }, [data])
   
-  async function handleLogin(values) {
-    const { data: { token } } = await api.post('/sessions', values)
+  const handleLogin = useCallback( async(values) => {
+    const response = await api.post('/sessions', values)
 
-    localStorage.setItem('token', JSON.stringify(token))
-    api.defaults.headers.Authorization = `Bearer ${token}`
-    setAuthenticated(true)
+    const { user, token } = response.data
+
+    localStorage.setItem('token', token)
+    localStorage.setItem('user', JSON.stringify(user))
+
+    api.defaults.headers.authorization = `Bearer ${token}`;
+
+    setData({ token, user })
+
     history.push('/home')
-  }
+  }, [])
 
-  function handleLogout() {
-    setAuthenticated(false)
-    localStorage.removeItem('token')
-    api.defaults.headers.Authorization = undefined
+  const handleLogout = useCallback( async() => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    api.defaults.headers.Authorization = ""
+
+    setData({});
+
     history.push('/login')
-  }
+  }, [])
 
-  return { authenticated, loading, handleLogin, handleLogout }
+  return { data, authenticated, loading, handleLogin, handleLogout }
 }

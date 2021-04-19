@@ -56,22 +56,24 @@ function Home() {
       if (response && response.data) {
         const data = response.data
 
-        const percentValue = () => {
-          var initvalue = 0
-          {data.profile_image ? initvalue+=25 : 0}
-          {data.headline ? initvalue+=25 : 0}
-          {data.description ? initvalue+=25 : 0}
-          {data.skillLevel >= 1 ? initvalue+=25 : 0}
-
-          return initvalue
+        if (data) {
+          const percentValue = () => {
+            var initvalue = 0
+            {data.profile_image ? initvalue+=25 : 0}
+            {data.headline ? initvalue+=25 : 0}
+            {data.description ? initvalue+=25 : 0}
+            {data.skillLevel >= 1 ? initvalue+=25 : 0}
+  
+            return initvalue
+          }
+  
+          setUser({
+            ...data,
+            skillLevel: data.skills.length,
+            surname: data.name.split(' ')[0],
+            profileLevel: percentValue(data)
+          })
         }
-
-        setUser({
-          ...data,
-          skillLevel: data.skills.length,
-          surname: data.name.split(' ')[0],
-          profileLevel: percentValue(data)
-        })
       }
     })
   }, [])

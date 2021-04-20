@@ -11,7 +11,7 @@ export default function useAuth() {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
 
-    if (token && user) {
+    if (token) {
       api.defaults.headers.authorization = `Bearer ${token}`;
 
       return { token, user: JSON.parse(user) };
@@ -25,27 +25,25 @@ export default function useAuth() {
 
     if (token && user) {
       setAuthenticated(true)
-    }
-
+    } 
+          
     const timer = setTimeout(() => {
       setLoading(false)
-    }, 1000);
+    }, 1000); 
     return () => clearTimeout(timer);
   }, [data])
   
   const handleLogin = useCallback( async(values) => {
     const response = await api.post('/sessions', values)
 
-    const { user, token } = response.data
+    const { token, user } = response.data
 
-    localStorage.setItem('token', token)
-    localStorage.setItem('user', JSON.stringify(user))
+    if(token && user) {
+       history.push('/home')
 
-    api.defaults.headers.authorization = `Bearer ${token}`;
-
-    setData({ token, user })
-
-    history.push('/home')
+       localStorage.setItem('token', token)
+       localStorage.setItem('user', JSON.stringify(user))
+    }
   }, [])
 
   const handleLogout = useCallback( async() => {

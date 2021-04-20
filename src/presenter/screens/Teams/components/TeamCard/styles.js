@@ -55,7 +55,7 @@ export const Image = styled.img`
   position: relative;
 
   &:not(:last-child) {
-    margin-right: -10px
+    margin-right: -10px;
   }
 `
 export const Content = styled.div`

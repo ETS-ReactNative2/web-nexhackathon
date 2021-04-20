@@ -160,7 +160,7 @@ function Home() {
               <ShortcutTitle>Perfil</ShortcutTitle>
             </ShortcutItem>
 
-            <ShortcutItem>
+            <ShortcutItem onClick={handleNavigateToTeams}>
               <ShortcutIcon src={UsersIcon} />
               <ShortcutTitle>Times</ShortcutTitle>
             </ShortcutItem>

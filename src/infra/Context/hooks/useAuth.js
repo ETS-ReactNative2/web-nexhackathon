@@ -39,12 +39,14 @@ export default function useAuth() {
     const { token, user } = response.data
 
     if(token && user) {
-       history.push('/home')
-
        localStorage.setItem('token', token)
        localStorage.setItem('user', JSON.stringify(user))
+
+      if (data) {
+        return data
+      }
     }
-  }, [])
+  }, [data])
 
   const handleLogout = useCallback( async() => {
     localStorage.removeItem('token');

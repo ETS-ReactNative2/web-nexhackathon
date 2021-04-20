@@ -42,7 +42,11 @@ function Login() {
       password: Yup.string().min(6, 'Senha inválida').required('Por favor insira uma senha.')
     }),
     onSubmit: values => {
-      handleLogin(values)
+      handleLogin(values).then((response) => {
+        if (response) {
+          history.push('/home')
+        }
+      })
     }
   })
 

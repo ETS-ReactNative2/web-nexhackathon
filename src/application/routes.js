@@ -6,6 +6,7 @@ import { Context } from '../infra/Context/authContext'
 import Landing from '../presenter/screens/Landing'
 import Login from '../presenter/screens/Login'
 import Dashboard from '../presenter/screens/Dashboard'
+import Register from '../presenter/screens/Register'
 
 function CustomRoute({ isPrivate, ...rest}) {
   const { loading, authenticated } = useContext(Context)
@@ -26,6 +27,7 @@ export default function Routes() {
     <Switch>
       <CustomRoute exact path="/" component={Landing} />
       <CustomRoute exact path="/login" component={Login} />
+      <CustomRoute exact path="/signup" component={Register} />
       <CustomRoute isPrivate exact path="/dashboard" component={Dashboard} />
     </Switch>
   )

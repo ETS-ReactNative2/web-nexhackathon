@@ -32,11 +32,10 @@ export default function Routes() {
     <Switch>
       <CustomRoute exact path="/" component={Landing} />
       <CustomRoute exact path="/login" component={Login} />
-      <CustomRoute isPrivate exact path="/home" component={Home} />
-      <CustomRoute isPrivate exact path="/submit" component={SubmitProject} />
-      <CustomRoute isPrivate exact path="/home" component={Home} />
-      <CustomRoute isPrivate exact path="/teams" component={Teams} />
-      <CustomRoute isPrivate exact path="/team/create" component={CreateTeams} />
+      <CustomRoute exact path="/home" component={Home} />
+      <CustomRoute exact path="/submit" component={SubmitProject} />
+      <CustomRoute exact path="/teams" component={Teams} />
+      <CustomRoute exact path="/team/create" component={CreateTeams} />
 
       {/* prevent not found route */}
       <CustomRoute path="/404" component={NotFound} />

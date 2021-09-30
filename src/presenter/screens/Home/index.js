@@ -31,7 +31,7 @@ import {
 } from './styles';
 
 import Loader from '../Loader'
-import Header from '../../../components/Header'
+import Header from '../../components/Header'
 import ProfileContent from './components/ProfileContent'
 import ProfileLevelBar from './components/LevelBar'
 import MissionsCard from './components/MissionCard'

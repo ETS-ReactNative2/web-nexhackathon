@@ -11,7 +11,7 @@ import {
   TeamsWrapper,
 } from './styles';
 
-import Header from '../../../components/Header'
+import Header from '../../components/Header'
 import TeamCard from './components/TeamCard'
 
 function Teams() {

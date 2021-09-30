@@ -3,13 +3,13 @@ import React from 'react'
 import {
   Content,
   Partner,
-  Support,
+  // Support,
   Title,
   LogoImage,
 } from './styles'
 
 import NexLogo from '../../../../../_assets/icons/nex-logo.svg'
-import ShaweeLogo from '../../../../../_assets/icons/shawee-logo.svg'
+// import ShaweeLogo from '../../../../../_assets/icons/shawee-logo.svg'
 
 function Partners(){
   return(

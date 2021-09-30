@@ -23,7 +23,7 @@ function Footer(){
 
   return(
     <Content>
-      <Text>Total de <GreenText>{connections}</GreenText> participantes já cadastrados.<Icon src={Heart} /></Text>
+      <Text>Total de <GreenText>0</GreenText> participantes já cadastrados.<Icon src={Heart} /></Text>
     </Content>
   )
 }

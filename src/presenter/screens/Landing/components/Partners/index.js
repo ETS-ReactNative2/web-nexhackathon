@@ -18,10 +18,10 @@ function Partners(){
         <Title>Realização:</Title>
         <LogoImage src={NexLogo} />
       </Partner>
-      <Support>
+      {/* <Support>
         <Title>Apoio:</Title>
         <LogoImage src={ShaweeLogo} />
-      </Support>
+      </Support> */}
     </Content>
   )
 }

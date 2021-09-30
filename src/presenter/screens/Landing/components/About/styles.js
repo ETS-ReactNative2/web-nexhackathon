@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Content = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,7 +12,7 @@ export const Wave = styled.img`
   width: 100%;
   margin-bottom: -1px;
 `
-export const Main = styled.main`
+export const Main = styled.div`
   width: 100%;
   background: var(--linear-gradient);
   padding: 5vh var(--container-horizontal-padding);
@@ -76,13 +77,13 @@ export const CardsContainer = styled.div`
   gap: 1rem 8rem;
 
   @media(max-width: 1024){
-    padding: 0 2%;
+    /* padding: 0 2%; */
     display: flex;
     flex-direction: column;
   }
 
   @media(max-width: 768px){
-    padding: 0 2%;
+    /* padding: 0 2%; */
     display: flex;
     flex-direction: column;
 
@@ -100,7 +101,7 @@ export const Cards = styled.div`
   span{
     margin-left: 1rem;
     color: var(--white--color);
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.4rem;
   }
 
@@ -111,6 +112,7 @@ export const Cards = styled.div`
 
     span{
       margin-top: 1rem;
+      margin-left: 0;
     }
   }
 `

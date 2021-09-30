@@ -21,7 +21,7 @@ import RouteImg from "../../../../../_assets/icons/route.svg";
 function AboutSection() {
   return (
     <Content>
-      <Wave src={AboutWaveImg} />
+      {/* <Wave src={AboutWaveImg} /> */}
       <Main>
         <Title>
           <h1>Como funciona ?</h1>

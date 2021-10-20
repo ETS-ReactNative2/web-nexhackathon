@@ -19,11 +19,11 @@ export const Video = styled.video`
 `
 
 export const Content = styled.div`
+  width: 100%;
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
-
 `
 
 export const Button = styled.button`

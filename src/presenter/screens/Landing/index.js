@@ -68,7 +68,9 @@ function Landing() {
       <Container>
         <Introduction />
       </Container>
-        <Spotlight />
+
+      <Spotlight />
+
       <Container>
         <Matters>
           <Matter

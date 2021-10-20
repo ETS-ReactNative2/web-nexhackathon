@@ -1,110 +1,182 @@
 import styled from 'styled-components'
-
-export const Content = styled.section`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 0 0 5rem 0;
-`
+import { Autocomplete } from '@mui/material'
 
 export const Container = styled.div`
-  max-width: 1300px;
-  padding: 4vh var(--container-horizontal-padding);
-`
-
-export const Header = styled.header`
-`
-
-export const ArrowLink = styled.a``
-
-export const ArrowImg = styled.img`
-  cursor: pointer;
-`
-
-export const TextHeader = styled.h1`
-  font-size: 1.9rem;
-  color: var(--white--color);
-`
-
-export const FormTeam = styled.form`
-  width: 55%;
-  margin: 0 auto;
+  height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5vh 0;
+`
 
-  @media(max-width: 800px){
+export const Header = styled.div`
+  width: 65%;
+  margin-bottom: 5vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (max-width: 500px) {
     width: 100%;
-    padding: 0 3vh;
+    padding: 0 5vw;
   }
 `
 
-export const InputField = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+export const Redirect = styled.button`
+  border: none;
+  background: transparent;
+  margin-bottom: 10px;
 `
 
-export const Label = styled.span`
-  font-size: 1.2rem;
+export const Icon = styled.img`
+  width: 2rem;
+
+  &:hover {
+    transition: 0.2s;
+    cursor: pointer;
+    filter: opacity(70%);
+  }
+`
+
+export const HeaderText = styled.p`
   color: var(--white--color);
-  margin-bottom: 0.8rem;
-  margin-left: 0.3rem;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.7rem;
+  width: 200px;
+
+  display: flex;
+  align-items: center;
 `
 
-export const InputText = styled.input`
+export const Form = styled.form`
+  width: 50%;
+
+  @media (max-width: 500px) {
+    width: 100%;
+    padding: 0 5vw;
+  }
+`
+
+export const Field = styled.div`
+  margin-top: 20px;
+`
+
+export const Label = styled.label`
+  margin: 0 0 5px 10px;
+  color: var(--white--color);
+  font-weight: 500;
+  font-size: 16px;
+`
+
+export const Input = styled.input`
   width: 100%;
+  margin-top: 5px;
+
+  background: var(--light-gray--color);
+  border-radius: 5px;
   border: 0;
-  outline: none;
-  padding: 0.8rem 0.8rem;
-  border-radius: 0.5rem;
-  margin-bottom: 1.5rem;
+  padding: 12px 14px;
+  font-size: 16px;
+  color: #2e2e2e;
+  outline: 0;
 `
 
 export const InputTextArea = styled.textarea`
-  height: 130px;
-  resize: none;
   width: 100%;
+  height: 15vh;
+  margin-top: 5px;
+
+  background: var(--light-gray--color);
+  border-radius: 5px;
   border: 0;
-  outline: none;
-  padding: 0.6rem 0.8rem;
-  border-radius: 0.5rem;
-  font-size: 1.2rem;
+  padding: 12px 14px;
+  font-size: 16px;
+  color: #2e2e2e;
+  outline: 0;
+  resize: none;
+`
+
+export const Button = styled.button`
+  width: 100%;
+  margin-top: 40px;
+  background: var(--linear-gradient);
+  border-radius: 5px;
+  border: 0;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white--color);
+  outline: 0;
+  transition: 0.2s;
+
+  &:hover {
+    filter: opacity(80%);
+    cursor: pointer;
+  }
+`
+export const Error = styled.div`
+  color: var(--red--color);
+  margin: 5px 0 0 10px;
+  font-weight: 300;
+  filter: opacity(80%);
 `
 
 export const Picture = styled.div`
   width: 100%;
-  margin-top: 3rem;
-  display: flex;
+  margin: 20px 0 3vh 0;
+  padding-bottom: 15px;
 
-  @media(max-width: 800px){
+  display: flex;
+  align-items: center;
+
+  scroll-snap-type: x mandatory;
+
+  @media (max-width: 1000px) {
     overflow-x: auto;
   }
 `
 
 export const PictureSingle = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 4rem;
+  height: 4rem;
+  min-width: 4rem;
+
   margin-right: 1rem;
   background: var(--foreground--color);
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+
+  @media(max-width: 800px){
+    width: 4rem;
+    height: 4rem;
+    margin-right: .9rem;
+  }
+
+  @media(max-width: 600px){
+    width: 4rem;
+    height: 4rem;
+    margin-right: .5rem;
+  }
+`
+
+export const UserImage = styled.img`
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
 `
 
 export const AddPicture = styled.img`
-  cursor: pointer;
-  display: flex;
+  width: 50%;
+  height: 50%;
   align-items: center;
   justify-content: center;
-  border-radius: 0.5rem;
-
-  @media(max-width: 800px){
-    width: 150px;
-  }
 `
 
 export const Alert = styled.p`
@@ -116,18 +188,25 @@ export const Alert = styled.p`
   justify-content: left;
 `
 
-export const SubmitTeam = styled.button`
-  width: 100%;
-  margin-top: 3rem;
-  padding: 0.8rem 1rem;
-  border-radius: 0.5rem;
-  font-size: 1.4rem;
-  color: var(--white--color);
-  font-weight: bold;
-  background: var(--linear-gradient);
-  cursor: pointer;
 
-  &:hover{
-    background: var(--green--color);
-  }
+// Modal
+
+export const Box = styled.div`
+  position: absolute;
+  padding: 15px var(--container-horizontal-padding);
+  width: 90%;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 24;
+  background: var(--black--color);
+  border-radius: 5px;
 `
+
+export const Select = styled(Autocomplete)`
+  min-width: 100%;
+  border: 0;
+  color: '#fff';
+`
+

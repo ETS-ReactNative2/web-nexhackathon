@@ -26,7 +26,7 @@ export const Header = styled.div`
 export const Redirect = styled.button`
   border: none;
   background: transparent;
-  margin-bottom: 10px
+  margin-bottom: 10px;
 `
 
 export const Icon = styled.img`

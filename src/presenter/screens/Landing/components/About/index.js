@@ -2,7 +2,7 @@ import React from "react";
 
 import {
   Content,
-  Wave,
+  // Wave,
   Main,
   Title,
   Instructions,
@@ -12,7 +12,7 @@ import {
   Action,
 } from "./styles";
 
-import AboutWaveImg from "../../../../../_assets/images/about_wave.svg";
+// import AboutWaveImg from "../../../../../_assets/images/about_wave.svg";
 import EditImg from "../../../../../_assets/icons/edit.svg";
 import GroupImg from "../../../../../_assets/icons/group.svg";
 import NetworkImg from "../../../../../_assets/icons/network.svg";
@@ -21,7 +21,7 @@ import RouteImg from "../../../../../_assets/icons/route.svg";
 function AboutSection() {
   return (
     <Content>
-      <Wave src={AboutWaveImg} />
+      {/* <Wave src={AboutWaveImg} /> */}
       <Main>
         <Title>
           <h1>Como funciona ?</h1>

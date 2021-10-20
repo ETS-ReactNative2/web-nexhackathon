@@ -61,10 +61,10 @@ function Login() {
   return (
     <Container>
       <Header>
-          <Redirect onClick={handleNavigateBack}>
-              <Icon src={LeftArrow} />
-          </Redirect>
-          <HeaderText>É bom te ver por aqui!</HeaderText>
+        <Redirect onClick={handleNavigateBack}>
+            <Icon src={LeftArrow} />
+        </Redirect>
+        <HeaderText>É bom te ver por aqui!</HeaderText>
       </Header>
 
       <Form noValidate onSubmit={formik.handleSubmit}>

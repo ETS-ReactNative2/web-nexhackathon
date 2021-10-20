@@ -28,7 +28,6 @@ import {
     Text,
     Span,
     Error,
-    Div
 } from './styles'
 
 

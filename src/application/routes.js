@@ -10,6 +10,7 @@ import Teams from '../presenter/screens/Teams'
 import SubmitProject from '../presenter/screens/Submit'
 import NotFound from '../presenter/screens/NotFoundRoute'
 import CreateTeams from '../presenter/screens/CreateTeams'
+import Register from '../presenter/screens/Register'
 
 import Loader from '../presenter/screens/Loader'
 
@@ -36,6 +37,7 @@ export default function Routes() {
       <CustomRoute exact path="/submit" component={SubmitProject} />
       <CustomRoute exact path="/teams" component={Teams} />
       <CustomRoute exact path="/team/create" component={CreateTeams} />
+      <CustomRoute exact path="/sign-up" component={Register} />
 
       {/* prevent not found route */}
       <CustomRoute path="/404" component={NotFound} />

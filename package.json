@@ -17,7 +17,8 @@
     "react-scripts": "4.0.3",
     "styled-components": "^5.2.2",
     "web-vitals": "^1.0.1",
-    "yup": "^0.32.9"
+    "yup": "^0.32.9",
+    "zxcvbn": "^4.4.2"
   },
   "scripts": {
     "dev": "react-scripts start",

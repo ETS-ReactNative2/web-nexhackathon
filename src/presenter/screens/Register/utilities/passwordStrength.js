@@ -6,14 +6,14 @@ function getUserDatasForPasswordChecker(formik) {
     const nameArray = formik.values.name.split(' ')
 
     birthDateArray.forEach((data) => {
-        if(data != undefined) {
+        if(data !== undefined) {
             userDatas.push(data
                 )
         }
     })
 
     nameArray.forEach((data) => {
-        if(data != undefined) {
+        if(data !== undefined) {
             userDatas.push(data
                 )
         }
@@ -32,17 +32,17 @@ function passwordStrength(e, setUseState, formik) {
     const userDatas = getUserDatasForPasswordChecker(formik)
 
     userDatas.forEach((data) => {
-        if(data != '') {
+        if(data !== '') {
             regexStr += data
             regexStr += '|'
         }
     })
     
-    if(regexStr != undefined) {
+    if(regexStr !== undefined) {
         regex = new RegExp(regexStr.slice(9, -1), 'gi')
     }
     
-    if(password != '') {
+    if(password !== '') {
         passwordHandled = password.replace(regex, '0')
         console.log(passwordStrengthCalc(passwordHandled), userDatas)
         result = passwordStrengthCalc(passwordHandled).score

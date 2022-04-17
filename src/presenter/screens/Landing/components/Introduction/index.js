@@ -19,7 +19,7 @@ function IntroductionSection() {
     <Introduction>
       <MountainImage src={Montain} />
       <IntroductionContent>
-        <Date>De XX à XX de Novembro de 2021</Date>
+        <Date>De XX à XX de Novembro de XXXX</Date>
         <EventFormat>Online.</EventFormat>
         <IntroductionTitle>O que é um Hackathon?</IntroductionTitle>
         <IntroductionDescription>Hackathons são grandes oportunidades de aprender, conhecer e experimentar coisas novas. Aqui todos nós somos apaixonados por desafios e amamos promover nosso networking.</IntroductionDescription>

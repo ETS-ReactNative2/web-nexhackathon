@@ -14,7 +14,7 @@ import WaveImg from '../../../../../_assets/images/video_wave.svg'
 import Speaker from '../../../../../_assets/icons/speaker.svg'
 import MutedSpeaker from '../../../../../_assets/icons/muted-speaker.svg'
 
-import Official from '../../../../../_assets/Official.mp4'
+import IntroductionOfficial from '../../../../../_assets/Introduction_Official.mp4'
 
 function Spotlight() {
 
@@ -28,7 +28,7 @@ function Spotlight() {
     <Container>
       <Banner>
         <Video autoPlay muted={speaker ? '' : 'muted'} loop>
-            <source src={Official} type="video/mp4" />
+            <source src={IntroductionOfficial} type="video/mp4" />
         </Video>
         <Content>
             <Button>

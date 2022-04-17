@@ -20,12 +20,6 @@ export const Container = styled.div`
   flex-direction: column;
 `
 
-
-
-// 
-//  Missions Card Styles
-// 
-
 export const MissionsContent = styled.div`
   margin-top: 3vh;
   display: flex;

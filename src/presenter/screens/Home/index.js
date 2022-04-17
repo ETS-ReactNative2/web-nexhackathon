@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-lone-blocks */
 import React, { useEffect, useState } from 'react'
 
 import api from '../../../infra/services/http'
